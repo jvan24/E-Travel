@@ -1,0 +1,825 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>Dashboard User</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config" src="config.js"></script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface">
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between"
+      >
+        <div class="flex items-center gap-space-md">
+          <span class="material-symbols-outlined text-primary text-[32px]"
+            >explore</span
+          ><span class="font-headline-md text-on-surface tracking-tight"
+            >TravelerKu</span
+          >
+        </div>
+        <nav
+          class="hidden md:flex items-center gap-space-md"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full px-space-md py-space-xs"
+        >
+          <a
+            aria-current="page"
+            class="transition-colors bg-primary-container text-on-primary font-semibold rounded-full px-space-md py-space-xs"
+            data-path="beranda"
+            href="Userdashboard.html"
+            >Beranda</a
+          ><a
+            class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors px-space-md py-space-xs"
+            data-path="destinasi-tersimpan"
+            href="#"
+            >Destinasi Tersimpan</a
+          ><a
+            class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors px-space-md py-space-xs"
+            data-path="riwayat-pesanan"
+            href="#"
+            >Riwayat Pesanan</a
+          ><a
+            class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors px-space-md py-space-xs"
+            data-path="checkout"
+            href="Transaksi.html"
+            >Checkout</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-md">
+          <a
+            class="text-label-lg text-primary hover:text-primary-container transition-colors"
+            data-path="masuk"
+            href="#"
+            >Masuk</a
+          >
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-surface">
+      <div class="flex flex-col w-full">
+        <!-- Pane Navigator and Content -->
+        <section
+          class="relative -mt-20 pt-32 pb-24 bg-cover bg-center text-on-primary overflow-hidden"
+          data-alt="A breathtaking aerial view of a tropical coastline meeting crystal clear turquoise ocean waters with lush green cliffs and a golden sunset illuminating the horizon. High-end cinematic travel photography with warm glowing lighting, deep blues, and vibrant gold tones."
+          style="
+            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAMv_Mp4Z7h7p8B_Tgr93xusRbwbh3ixj5yM_dOjgFxjGe0qwK5DRIL6letIoQE0a-cAKvBWr7L1SIeBgOKRODC0dmFEFKQPghITdE8ebNT3zUHYgGIHBu-Z4YzgQReVJxu-9CVCByeEHS-7QayhkBdKZyailaKHOdHMbjv5JtJeooIlaPR-WV2k2rJQHF0-AdjMMJTgECcDC46OnKpU1tC9nIVh9dYv9LraRfHQl8&quot;);
+          "
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-on-surface/90 via-on-surface/60 to-transparent"
+          ></div>
+          <div
+            class="max-w-7xl mx-auto px-gutter relative z-10 flex flex-col items-start gap-space-lg"
+          >
+            <div
+              class="inline-flex items-center gap-space-sm bg-primary/30 backdrop-blur-md px-space-md py-space-xs rounded-full text-on-primary text-label-lg"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_back_ios_new</span
+              >
+              <span>Jelajahi Dunia Bersama TravelerKu</span>
+            </div>
+            <h1
+              class="font-headline-xl text-display-md max-w-2xl text-on-primary"
+            >
+              Temukan Petualangan Impian Anda Berikutnya
+            </h1>
+            <p
+              class="font-body-lg text-body-lg max-w-xl text-surface-container-low"
+            >
+              Pesan tiket pesawat, hotel mewah, dan paket liburan eksklusif
+              dengan harga terbaik hari ini.
+            </p>
+            <!-- Floating Search Widget -->
+            <div
+              class="w-full bg-surface/95 backdrop-blur-xl p-space-lg rounded-2xl shadow-2xl text-on-surface mt-space-md"
+            >
+              <div class="flex gap-space-md mb-space-md">
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-space-xs bg-primary text-on-primary rounded-full font-label-md transition-all"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >flight</span
+                  >
+                  Penerbangan
+                </button>
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface rounded-full font-label-md transition-all"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >hotel</span
+                  >
+                  Hotel
+                </button>
+                <button
+                  class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface rounded-full font-label-md transition-all"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >luggage</span
+                  >
+                  Paket Tur
+                </button>
+              </div>
+              <div
+                class="grid grid-cols-1 md:grid-cols-4 gap-space-md items-center"
+              >
+                <div
+                  class="bg-surface-container p-space-md rounded-xl flex flex-col"
+                >
+                  <label
+                    class="font-label-md text-on-surface-variant mb-space-xs"
+                    >TUJUAN / LOKASI</label
+                  >
+                  <div class="flex items-center gap-space-sm">
+                    <span class="material-symbols-outlined text-primary"
+                      >location_on</span
+                    >
+                    <input
+                      class="bg-transparent outline-none w-full font-body-md text-on-surface placeholder:text-outline"
+                      placeholder="Mau ke mana?"
+                      type="text"
+                      value="Bali, Indonesia"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container p-space-md rounded-xl flex flex-col"
+                >
+                  <label
+                    class="font-label-md text-on-surface-variant mb-space-xs"
+                    >TANGGAL PERJALANAN</label
+                  >
+                  <div class="flex items-center gap-space-sm">
+                    <span class="material-symbols-outlined text-primary"
+                      >calendar_month</span
+                    >
+                    <input
+                      class="bg-transparent outline-none w-full font-body-md text-on-surface placeholder:text-outline"
+                      placeholder="Pilih tanggal"
+                      type="text"
+                      value="12 Okt - 18 Okt 2026"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container p-space-md rounded-xl flex flex-col"
+                >
+                  <label
+                    class="font-label-md text-on-surface-variant mb-space-xs"
+                    >TAMU &amp; KELAS</label
+                  >
+                  <div class="flex items-center gap-space-sm">
+                    <span class="material-symbols-outlined text-primary"
+                      >group</span
+                    >
+                    <input
+                      class="bg-transparent outline-none w-full font-body-md text-on-surface placeholder:text-outline"
+                      placeholder="Jumlah tamu"
+                      type="text"
+                      value="2 Dewasa, 1 Kamar"
+                    />
+                  </div>
+                </div>
+                <button
+                  class="bg-primary hover:bg-primary-container text-on-primary h-full py-4 rounded-xl font-label-md flex items-center justify-center gap-space-sm transition-all shadow-md"
+                >
+                  <span class="material-symbols-outlined">search</span>
+                  Cari Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Content Section Promo -->
+        <section class="max-w-7xl mx-auto px-gutter py-space-xl w-full">
+          <div class="flex justify-between items-end mb-space-lg">
+            <div>
+              <span class="font-label-md text-primary uppercase tracking-wider"
+                >Penawaran Terbatas</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg text-on-surface mt-space-xs"
+              >
+                Promo Spesial Hari Ini
+              </h2>
+            </div>
+            <a
+              class="font-label-md text-primary hover:text-primary-container flex items-center gap-space-xs"
+              href="#"
+            >
+              Lihat Semua Promo
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            <!-- Promo Card 1 -->
+            <div
+              class="rounded-2xl overflow-hidden bg-surface-container flex flex-col group relative shadow-md hover:shadow-xl transition-all"
+            >
+              <div
+                class="h-64 bg-cover bg-center relative overflow-hidden"
+                data-alt="Luxurious overwater bungalow resort in Bora Bora with crystal clear turquoise lagoon water, vibrant coral reefs underneath, and bright sunny tropical daylight."
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDZnAaY7h6UWzxAuLr5KjDe7k0zfinZn8APfDo5Bc9AQ5MfBUyMIuPignCwcYiaJAvDGzjRvS-Tm20a-dXdlO4L-AvhXbyWeb9Quejx4k-bWm0gA2cjOGJogW6s8Vehg919ywXj_wQCO_IFeImq4UdklHLuBUspLKq7pgVrrTsbwfKhxjOuLKDa61poGNgetymFMOmMypBz2wFf3FSkxgJJ5_PRQj0skE44gwAO-Iw&quot;);
+                "
+              >
+                <div
+                  class="absolute top-space-md left-space-md bg-tertiary text-on-tertiary px-space-md py-space-xs rounded-full font-label-md"
+                >
+                  Hemat 40%
+                </div>
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between">
+                <div>
+                  <div
+                    class="flex items-center gap-space-xs text-secondary font-label-md mb-space-xs"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >schedule</span
+                    >
+                    Berakhir dalam 5 jam
+                  </div>
+                  <h3
+                    class="font-headline-md text-headline-sm text-on-surface mb-space-sm"
+                  >
+                    Escape to Bora Bora Resort
+                  </h3>
+                  <p class="font-body-md text-on-surface-variant line-clamp-2">
+                    Nikmati malam romantis di atas air dengan fasilitas spa
+                    gratis dan sarapan terapung mewah.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center justify-between mt-space-lg pt-space-md border-t border-transparent"
+                >
+                  <div>
+                    <span class="text-body-sm text-outline line-through"
+                      >Rp 15.000.000</span
+                    >
+                    <div class="font-headline-sm text-primary">
+                      Rp 8.999.000
+                    </div>
+                  </div>
+                  <button
+                    class="bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full font-label-md transition-colors"
+                  >
+                    Pesan
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Promo Card 2 -->
+            <div
+              class="rounded-2xl overflow-hidden bg-surface-container flex flex-col group relative shadow-md hover:shadow-xl transition-all"
+            >
+              <div
+                class="h-64 bg-cover bg-center relative overflow-hidden"
+                data-alt="Panoramic drone view of Mount Fuji in Japan framed by vibrant pink cherry blossoms during spring season with clear blue sky and tranquil lake reflection."
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuATF7GdcuppwSoW3xwlJmb13zPKDkZAYEEGtJ3Wh9S8XmfzdFD2KEMPZV5Ru_z2JmVjfLr0XW7dHmCfBU67mn6gcrCLDgRtuJg5w4wvChv2yiwJj3kAL1a4G_vbTbD9N0wtxCmkqEt-kd3l7RH962TtTdvREdKyuSZb8H2xxXTpkN9Ej0at5k3sOpPTeK9aSAQXW4geBIuQ9D1HTtg3Bn5ThVlZg6Iwlajk9PwfkoU&quot;);
+                "
+              >
+                <div
+                  class="absolute top-space-md left-space-md bg-tertiary text-on-tertiary px-space-md py-space-xs rounded-full font-label-md"
+                >
+                  Cashback Rp 1 Juta
+                </div>
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between">
+                <div>
+                  <div
+                    class="flex items-center gap-space-xs text-secondary font-label-md mb-space-xs"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >flight_takeoff</span
+                    >
+                    Tiket Pulang-Pergi
+                  </div>
+                  <h3
+                    class="font-headline-md text-headline-sm text-on-surface mb-space-sm"
+                  >
+                    Tokyo Blossom Experience
+                  </h3>
+                  <p class="font-body-md text-on-surface-variant line-clamp-2">
+                    Terbang nyaman ke Jepang dengan maskapai bintang lima dan
+                    hotel dekat pusat kota Tokyo.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center justify-between mt-space-lg pt-space-md"
+                >
+                  <div>
+                    <span class="text-body-sm text-outline line-through"
+                      >Rp 12.500.000</span
+                    >
+                    <div class="font-headline-sm text-primary">
+                      Rp 10.200.000
+                    </div>
+                  </div>
+                  <button
+                    class="bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full font-label-md transition-colors"
+                  >
+                    Pesan
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Promo Card 3 -->
+            <div
+              class="rounded-2xl overflow-hidden bg-surface-container flex flex-col group relative shadow-md hover:shadow-xl transition-all"
+            >
+              <div
+                class="h-64 bg-cover bg-center relative overflow-hidden"
+                data-alt="Historic cobblestone street in old town Santorini Greece with classic whitewashed blue dome architecture and magnificent sunset over the Aegean Sea."
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBSjp8qXuCMfMbAZroVQUCcwIskzl_AbJ1O-n8KvafrcW-BKPMnJTYd4cybsUBK6CoNNts3JpKhVGdu9fJX6d-nHR-O-jWcAmknhll7xGYIZFv0I5R3s1QgZyRxlRveBI_4jubR2Ek4k8vAlgc9YGMQoFfFUhTN9_9KckWMcTXO9JDB2zehi7qFmQgF9mYh7v6dvb7Ecf18OXBVOaS2zrscK3DWc2lleySS9uV7dxQ&quot;);
+                "
+              >
+                <div
+                  class="absolute top-space-md left-space-md bg-secondary text-on-secondary px-space-md py-space-xs rounded-full font-label-md"
+                >
+                  Best Seller
+                </div>
+              </div>
+              <div class="p-space-lg flex flex-col flex-grow justify-between">
+                <div>
+                  <div
+                    class="flex items-center gap-space-xs text-secondary font-label-md mb-space-xs"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >star</span
+                    >
+                    4.9 (1.2k ulasan)
+                  </div>
+                  <h3
+                    class="font-headline-md text-headline-sm text-on-surface mb-space-sm"
+                  >
+                    Santorini Sunset Getaway
+                  </h3>
+                  <p class="font-body-md text-on-surface-variant line-clamp-2">
+                    Paket liburan 5 hari 4 malam mencakup tur privat menikmati
+                    matahari terbenam terbaik di Oia.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center justify-between mt-space-lg pt-space-md"
+                >
+                  <div>
+                    <span class="text-body-sm text-outline line-through"
+                      >Rp 22.000.000</span
+                    >
+                    <div class="font-headline-sm text-primary">
+                      Rp 17.500.000
+                    </div>
+                  </div>
+                  <button
+                    class="bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full font-label-lg transition-colors"
+                  >
+                    Pesan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Rekomendasi Destinasi Fav -->
+        <section class="bg-surface-container-low py-space-xl w-full">
+          <div class="max-w-7xl mx-auto px-gutter">
+            <div class="flex justify-between items-end mb-space-lg">
+              <div>
+                <span
+                  class="font-label-md text-primary uppercase tracking-wider"
+                  >Destinasi Favorit</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface mt-space-xs"
+                >
+                  Paling Banyak Dikunjungi
+                </h2>
+              </div>
+              <div class="flex gap-space-sm">
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all"
+                >
+                  <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all"
+                >
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-md">
+              <!-- Horizontal Card 1 -->
+              <div
+                class="bg-surface rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col md:flex-row items-stretch"
+              >
+                <div
+                  class="md:w-1/3 h-64 md:h-auto bg-cover bg-center"
+                  data-alt="Traditional Balinese temple gate framed against a dramatic sunset sky with vibrant orange and purple clouds over serene water reflection in Ubud Bali."
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA5bjVIANUXMx7oLzHwyB-GpTQ5omfpOiL6GcndcnwM3XgNs5axC7Hpz1NxOJyIHhOovOw3IfUWPIuDyE9thMnmA5PbdFejPcAREN4DYuDLUvPXFZrRK3Z4KgWoUGExBMdlrAvw2KIOaNyrJfs-TBbB6l_j4k_xMlS-vu0Y5ehzalILtxI62P2BhcOoSrRLd3yFCiw5sAa8FGIJi7GtoBwWCpuTjdwodnRfW6VRicg&quot;);
+                  "
+                ></div>
+                <div class="p-space-lg md:w-2/3 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-space-xs">
+                      <span
+                        class="font-label-md text-primary bg-primary-fixed px-space-sm py-space-xs rounded-md"
+                        >Indonesia</span
+                      >
+                      <div
+                        class="flex items-center gap-space-xs text-on-surface-variant font-label-md"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[18px]"
+                          style="font-variation-settings: &quot;FILL&quot; 1"
+                          >star</span
+                        >
+                        4.9 (3.4k Hotel &amp; Aktivitas)
+                      </div>
+                    </div>
+                    <h3
+                      class="font-headline-lg text-headline-sm text-on-surface mb-space-sm"
+                    >
+                      Bali, Pulau Dewata
+                    </h3>
+                    <p class="font-body-md text-on-surface-variant mb-space-md">
+                      Nikmati keindahan pantai berpasir putih, sawah terasering
+                      yang hijau subur, serta kekayaan budaya spiritual yang
+                      memukau di setiap sudut pulau.
+                    </p>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-md border-t border-transparent"
+                  >
+                    <div>
+                      <span class="text-body-sm text-on-surface-variant"
+                        >Mulai dari</span
+                      >
+                      <div class="font-headline-md text-primary">
+                        Rp 1.200.000
+                        <span
+                          class="text-body-sm text-on-surface-variant font-normal"
+                          >/ malam</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-sm rounded-full font-label-lg transition-colors"
+                    >
+                      Jelajahi Hotel
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Horizontal Card 2 -->
+              <div
+                class="bg-surface rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col md:flex-row items-stretch"
+              >
+                <div
+                  class="md:w-1/3 h-64 md:h-auto bg-cover bg-center"
+                  data-alt="Modern illuminated skyscrapers of Singapore Marina Bay Sands skyline reflecting brilliantly in the evening harbor waters under a twilight sky."
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCVMHnHud8fmIFlNWh2cNF7mL-0FPU6ueMAKBV6tRi_PKZbWqcMtAx5fOoT8am8SxZnrRY2YDKyLgc2dttzYCBhsOXM1C6kpemyNKXtmu3CICoSv3SmhlN83y3rHnIqYH6ubq8wP4rllKmbDiPjwJGk6peYxgkoItz1LeBu1gGu0js9gAaVkGUf15m44YcFR7InZXMOuTf_TtCVRX6tvZ5khi3gR-V6XNWl9w7zdvk&quot;);
+                  "
+                ></div>
+                <div class="p-space-lg md:w-2/3 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-space-xs">
+                      <span
+                        class="font-label-md text-primary bg-primary-fixed px-space-sm py-space-xs rounded-md"
+                        >Singapura</span
+                      >
+                      <div
+                        class="flex items-center gap-space-xs text-on-surface-variant font-label-md"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[18px]"
+                          style="font-variation-settings: &quot;FILL&quot; 1"
+                          >star</span
+                        >
+                        4.8 (2.1k Hotel &amp; Aktivitas)
+                      </div>
+                    </div>
+                    <h3
+                      class="font-headline-lg text-headline-sm text-on-surface mb-space-sm"
+                    >
+                      Singapore Cityscape
+                    </h3>
+                    <p class="font-body-md text-on-surface-variant mb-space-md">
+                      Pusat kota metropolitan kelas dunia dengan arsitektur
+                      futuristik, taman botani megah, dan kuliner street food
+                      bintang Michelin.
+                    </p>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-md border-t border-transparent"
+                  >
+                    <div>
+                      <span class="text-body-sm text-on-surface-variant"
+                        >Mulai dari</span
+                      >
+                      <div class="font-headline-md text-primary">
+                        Rp 1.850.000
+                        <span
+                          class="text-body-sm text-on-surface-variant font-normal"
+                          >/ malam</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-sm rounded-full font-label-lg transition-colors"
+                    >
+                      Jelajahi Hotel
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Horizontal Card 3 -->
+              <div
+                class="bg-surface rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col md:flex-row items-stretch"
+              >
+                <div
+                  class="md:w-1/3 h-64 md:h-auto bg-cover bg-center"
+                  data-alt="Majestic karst limestone islands rising gracefully from emerald green waters of Ha Long Bay Vietnam under soft morning sunlight with traditional wooden junk boats sailing."
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDbWztE5JpNn2SchRx7CMl0NP_2G70LN53-pk2W6en5O3aAxwA2HXb94GnI5ohizU_FW3gE1s-OYeCOlG69piXW5IDzJMIERNNECiN2t9lJIrNY9j9RliiCu6XlqqtaOKMtz-3BK3c7OCENoS7puiV65y4j_5uXN60vX7MUlpVQfYZhAeHmhVgtj61BHwaWIM4OlRtDAMFH6OuASntDHQbiOcYgCXcCD8tmnQy7IEg&quot;);
+                  "
+                ></div>
+                <div class="p-space-lg md:w-2/3 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-space-xs">
+                      <span
+                        class="font-label-md text-primary bg-primary-fixed px-space-sm py-space-xs rounded-md"
+                        >Vietnam</span
+                      >
+                      <div
+                        class="flex items-center gap-space-xs text-on-surface-variant font-label-md"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[18px]"
+                          style="font-variation-settings: &quot;FILL&quot; 1"
+                          >star</span
+                        >
+                        4.7 (1.5k Hotel &amp; Aktivitas)
+                      </div>
+                    </div>
+                    <h3
+                      class="font-headline-lg text-headline-sm text-on-surface mb-space-sm"
+                    >
+                      Ha Long Bay, Vietnam
+                    </h3>
+                    <p class="font-body-md text-on-surface-variant mb-space-md">
+                      Keajaiban alam dunia dengan gugusan pulau karst megah dan
+                      pelayaran kapal pesiar mewah menelusuri gua-gua
+                      tersembunyi.
+                    </p>
+                  </div>
+                  <div
+                    class="flex items-center justify-between pt-space-md border-t border-transparent"
+                  >
+                    <div>
+                      <span class="text-body-sm text-on-surface-variant"
+                        >Mulai dari</span
+                      >
+                      <div class="font-headline-md text-primary">
+                        Rp 950.000
+                        <span
+                          class="text-body-sm text-on-surface-variant font-normal"
+                          >/ malam</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-sm rounded-full font-label-lg transition-colors"
+                    >
+                      Jelajahi Hotel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Rekomendasi Eksklusif -->
+        <section class="max-w-7xl mx-auto px-gutter py-space-xl w-full">
+          <div class="flex justify-between items-end mb-space-lg">
+            <div>
+              <span class="font-label-md text-primary uppercase tracking-wider"
+                >Kurasi Khusus</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg text-on-surface mt-space-xs"
+              >
+                Rekomendasi Perjalanan Eksklusif
+              </h2>
+            </div>
+            <a
+              class="font-label-lg text-primary hover:text-primary-container flex items-center gap-space-xs"
+              href="#"
+            >
+              Lihat Semua Rekomendasi
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+            <div
+              class="relative rounded-2xl overflow-hidden h-96 flex flex-col justify-end p-space-xl group shadow-xl"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Luxury alpine ski chalet cabin in the Swiss Alps surrounded by snowy pine trees with warm glowing indoor lights and majestic snow-capped mountain peaks under twilight."
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBkhFJqujmjPbGWIy_sHsWztjPQ6T6o6VYeFFayGq2fX_p87kMI_POUzW137yVlqHMY3h9mzVT0jJXAOJTgrnMa2YzX6fAaA6BrDA37QW_XmsW5n4c0ZbzrQK5T_BSQ05dUCMBVwVWptnN8uVjm7D43g1SL9kFqbUDz7MvvatP8O-U9HhqIjwa4JvdZdjQ8BWqwRJykFCtlAd1BiL5lZO8F2PgkehIo_TGltaAXKGw&quot;);
+                "
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/30 to-transparent"
+              ></div>
+              <div class="relative z-10">
+                <span
+                  class="bg-secondary text-on-secondary px-space-md py-space-xs rounded-full font-label-md"
+                  >Musim Dingin</span
+                >
+                <h3
+                  class="font-headline-lg text-headline-sm text-on-primary mt-space-sm"
+                >
+                  Swiss Alps Ski &amp; Spa Retreat
+                </h3>
+                <p
+                  class="font-body-md text-surface-container-low mt-space-xs mb-space-md"
+                >
+                  Pengalaman menginap di chalet eksklusif pegunungan salju Alpen
+                  dengan fasilitas hot tub privat dan pemandu ski profesional.
+                </p>
+                <button
+                  class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-sm rounded-full font-label-lg transition-colors"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+            </div>
+            <div
+              class="relative rounded-2xl overflow-hidden h-96 flex flex-col justify-end p-space-xl group shadow-xl"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Romantic luxury safari lodge tent deck overlooking vast African savannah plains with elephants walking past at sunset under golden dramatic sky."
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDQrRhR21Vq8-LOIdIhRdrXUqZvegYtpsaRuPGvqUy1EJ_8uuZXEGIwMAaV68ot3nNchu_Nm2fqZJNyXulATC28CV4RyAExhLObej4fG9gJucvfRpQnOD_G4s3ayvZXqkbIQsXDpLVYSBtRXq_oLf5GkA-jwB8KMpFk87mZl0T08EdHkzyX4haF3tOZOOgbL4EboY7Xj6ZNPmC2p8wWvk8id1xNL0l91tssxAWdqYA&quot;);
+                "
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/30 to-transparent"
+              ></div>
+              <div class="relative z-10">
+                <span
+                  class="bg-tertiary text-on-tertiary px-space-md py-space-xs rounded-full font-label-md"
+                  >Safari Mewah</span
+                >
+                <h3
+                  class="font-headline-lg text-headline-sm text-on-primary mt-space-sm"
+                >
+                  Serengeti Wildlife Expedition
+                </h3>
+                <p
+                  class="font-body-md text-surface-container-low mt-space-xs mb-space-md"
+                >
+                  Petualangan safari bintang lima di Tanzania menyaksikan
+                  migrasi besar satwa liar dengan kemah tenda mewah berfasilitas
+                  lengkap.
+                </p>
+                <button
+                  class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-space-sm rounded-full font-label-lg transition-colors"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Newsletter / App Download Banner -->
+        <section class="max-w-7xl mx-auto px-gutter pb-space-xl w-full">
+          <div
+            class="bg-primary text-on-primary rounded-3xl p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-xl shadow-2xl relative overflow-hidden"
+          >
+            <div
+              class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container/40 rounded-full blur-3xl"
+            ></div>
+            <div class="relative z-10 max-w-xl">
+              <span
+                class="font-label-md bg-white/20 px-space-md py-space-xs rounded-full text-on-primary"
+                >Diskon Eksklusif App</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg text-on-primary mt-space-md"
+              >
+                Dapatkan Voucher Diskon Rp 500rb untuk Pemesanan Pertama
+              </h2>
+              <p class="font-body-lg text-primary-fixed mt-space-sm">
+                Unduh aplikasi TravelerKu di smartphone Anda dan nikmati
+                kemudahan booking penerbangan dan hotel di dalam genggaman.
+              </p>
+            </div>
+            <div class="relative z-10 flex flex-col sm:flex-row gap-space-md">
+              <button
+                class="bg-on-primary text-primary px-space-xl py-space-md rounded-xl font-label-lg hover:bg-surface-container-low transition-colors shadow-lg"
+              >
+                Unduh untuk iOS
+              </button>
+              <button
+                class="bg-on-primary/10 hover:bg-on-primary/20 text-on-primary px-space-xl py-space-md rounded-xl font-label-lg transition-colors backdrop-blur-md"
+              >
+                Unduh untuk Android
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="w-full bg-surface-container-low py-space-xl">
+      <div
+        class="max-w-7xl mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-primary text-[24px]"
+            >explore</span
+          ><span class="font-headline-sm text-on-surface">TravelerKu</span>
+        </div>
+        <p class="text-body-sm text-on-surface-variant">
+          © 2026 TravelerKu Travel Inc. All rights reserved.
+        </p>
+        <div class="flex gap-space-md text-on-surface-variant">
+          <span
+            class="material-symbols-outlined cursor-pointer hover:text-primary"
+            >public</span
+          ><span
+            class="material-symbols-outlined cursor-pointer hover:text-primary"
+            >share</span
+          ><span
+            class="material-symbols-outlined cursor-pointer hover:text-primary"
+            >favorite</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

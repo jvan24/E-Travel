@@ -1,0 +1,436 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_blank" name="shell-type" />
+    <title>Login Admin</title>
+    <script src="admin.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#4d44e3",
+              "inverse-primary": "#c3c0ff",
+              "on-tertiary-fixed": "#141b2c",
+              "primary-fixed-dim": "#c3c0ff",
+              "inverse-surface": "#213145",
+              "secondary-fixed": "#e1e0ff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#bfc6dd",
+              outline: "#777587",
+              "outline-variant": "#c7c4d8",
+              "on-surface": "#0b1c30",
+              "on-secondary-fixed": "#07006c",
+              background: "#f8f9ff",
+              "surface-variant": "#d3e4fe",
+              "on-background": "#0b1c30",
+              "surface-container-lowest": "#ffffff",
+              tertiary: "#41485b",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              secondary: "#4648d4",
+              "surface-container": "#e5eeff",
+              "on-primary-container": "#dad7ff",
+              "tertiary-container": "#586074",
+              "on-primary-fixed": "#0f0069",
+              "secondary-fixed-dim": "#c0c1ff",
+              "on-secondary-fixed-variant": "#2f2ebe",
+              "primary-fixed": "#e2dfff",
+              "on-tertiary-fixed-variant": "#3f4759",
+              "surface-container-low": "#eff4ff",
+              "error-container": "#ffdad6",
+              "primary-container": "#4f46e5",
+              "on-error": "#ffffff",
+              error: "#ba1a1a",
+              primary: "#3525cd",
+              "on-primary-fixed-variant": "#3323cc",
+              surface: "#f8f9ff",
+              "surface-dim": "#cbdbf5",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#dce9ff",
+              "on-secondary-container": "#fffbff",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary-container": "#d4dbf3",
+              "on-surface-variant": "#464555",
+              "secondary-container": "#6063ee",
+              "tertiary-fixed": "#dbe2fa",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-xs": "0.25rem",
+              margin: "2rem",
+              gutter: "1.5rem",
+              "space-md": "1rem",
+              "space-lg": "1.5rem",
+              "space-xl": "2.5rem",
+              "space-sm": "0.5rem",
+            },
+            fontFamily: {
+              "display-lg": ["Plus Jakarta Sans"],
+              "body-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "headline-sm": ["Plus Jakarta Sans"],
+              "body-md": ["Inter"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "label-sm": ["Inter"],
+              "headline-xl": ["Plus Jakarta Sans"],
+              "label-lg": ["Inter"],
+            },
+            fontSize: {
+              "display-lg": [
+                "56px",
+                {
+                  lineHeight: "64px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+              "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "display-md": [
+                "44px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+              "headline-xl": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface">
+    <main
+      class="w-full min-h-screen bg-surface flex items-center justify-center"
+    >
+      <div
+        class="flex flex-col w-full items-center justify-center p-gutter relative overflow-hidden"
+      >
+        <!-- Ambient -->
+        <div
+          class="absolute w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl pointer-events-none -top-32 -left-20"
+        ></div>
+        <div
+          class="absolute w-[400px] h-[400px] rounded-full bg-secondary/5 blur-3xl pointer-events-none -bottom-24 -right-20"
+        ></div>
+        <!-- Container Login -->
+        <div
+          class="w-full max-w-lg bg-surface-container-lowest rounded-xl shadow-xl p-space-xl relative z-10"
+        >
+          <!-- Top System -->
+          <div class="flex items-center justify-between mb-space-lg">
+            <div class="flex items-center gap-space-sm">
+              <div
+                class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-headline-sm"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >travel_explore</span
+                >
+              </div>
+              <div>
+                <span
+                  class="font-headline-sm text-headline-sm tracking-tight text-on-surface block leading-none"
+                  >TravelerKu</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-semibold"
+                  >Administrator</span
+                >
+              </div>
+            </div>
+            <span
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-tertiary-fixed-variant font-label-sm text-label-sm font-medium"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+              ></span>
+              Internal Portal
+            </span>
+          </div>
+          <!-- Header -->
+          <div class="mb-space-lg">
+            <h1 class="font-headline-md text-headline-md text-on-surface">
+              Masuk Portal Administrator
+            </h1>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Akses khusus staf dan manajemen operasional TravelerKu &amp;
+              Pastikan Anda memiliki kredensial resmi untuk masuk.
+            </p>
+          </div>
+          <!-- Form -->
+          <form
+            class="space-y-space-md"
+            id="adminLoginForm"
+            onsubmit="
+              event.preventDefault();
+              handleLogin();
+            "
+          >
+            <!-- Input: Email-->
+            <div class="space-y-1.5">
+              <label
+                class="block font-label-md text-label-md text-on-surface"
+                for="adminEmail"
+              >
+                ID Admin / Email Resmi Perusahaan
+              </label>
+              <div class="relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-3.5 text-outline text-headline-sm pointer-events-none select-none"
+                >
+                  badge
+                </span>
+                <input
+                  class="w-full pl-11 pr-4 py-3 bg-surface-container-low rounded-lg text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all"
+                  id="adminEmail"
+                  placeholder="nama.staf@travelerku.id"
+                  required=""
+                  type="email"
+                />
+              </div>
+            </div>
+            <!-- Input: Password -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label
+                  class="block font-label-md text-label-md text-on-surface"
+                  for="adminPassword"
+                >
+                  Kata Sandi
+                </label>
+              </div>
+              <div class="relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-3.5 text-outline text-headline-sm pointer-events-none select-none"
+                >
+                  lock
+                </span>
+                <input
+                  class="w-full pl-11 pr-11 py-3 bg-surface-container-low rounded-lg text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all"
+                  id="adminPassword"
+                  placeholder="••••••••••••"
+                  required=""
+                  type="password"
+                />
+                <button
+                  aria-label="Tampilkan atau sembunyikan sandi"
+                  class="absolute right-3.5 text-outline hover:text-on-surface transition-colors flex items-center justify-center p-0.5"
+                  onclick="togglePasswordVisibility()"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-headline-sm"
+                    id="passwordToggleIcon"
+                  >
+                    visibility
+                  </span>
+                </button>
+              </div>
+            </div>
+            <!-- Input: 2FA Security -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label
+                  class="block font-label-md text-label-md text-on-surface"
+                  for="admin2FA"
+                >
+                  Kode Keamanan 2FA
+                  <span
+                    class="text-on-surface-variant font-label-sm text-label-sm font-normal"
+                    >(Authenticator ID)</span
+                  >
+                </label>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant"
+                  >6-Digit PIN</span
+                >
+              </div>
+              <div class="relative flex items-center">
+                <span
+                  class="material-symbols-outlined absolute left-3.5 text-outline text-headline-sm pointer-events-none select-none"
+                >
+                  verified_user
+                </span>
+                <input
+                  class="w-full pl-11 pr-4 py-3 bg-surface-container-low rounded-lg text-on-surface font-body-sm text-body-sm tracking-widest placeholder:tracking-normal placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all"
+                  id="admin2FA"
+                  maxlength="6"
+                  pattern="[0-9]{6}"
+                  placeholder="000000"
+                  type="text"
+                />
+              </div>
+            </div>
+            <!-- Checkbox: Remember Session -->
+            <div class="flex items-center justify-between pt-1">
+              <label
+                class="flex items-center gap-2.5 cursor-pointer select-none"
+              >
+                <input
+                  class="w-4 h-4 rounded text-primary bg-surface-container-low accent-primary cursor-pointer"
+                  id="rememberSession"
+                  type="checkbox"
+                />
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Ingat sesi perangkat ini</span
+                >
+              </label>
+              <a
+                class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors"
+                href="javascript:void(0)"
+                onclick="
+                  alert(
+                    'Silakan hubungi IT Helpdesk TravelerKu via internal-support@travelerku.id',
+                  )
+                "
+              >
+                Bantuan Akses?
+              </a>
+            </div>
+            <!-- Button -->
+            <div class="pt-2">
+              <button
+                class="w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-primary shadow-md hover:shadow-lg transition-all active:scale-[0.99]"
+                id="submitButton"
+                type="submit"
+              >
+                <a href="Admin/Admindashboard.html">
+                  <span>Masuk ke Dashboard Operasional</span>
+                  <span class="material-symbols-outlined text-headline-sm"
+                    >arrow_forward</span
+                  >
+                </a>
+              </button>
+            </div>
+          </form>
+          <div class="my-space-lg flex items-center justify-center">
+            <div class="w-full h-px bg-surface-variant"></div>
+          </div>
+          <!-- Footer Isi -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left"
+          >
+            <a
+              class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+              href="formlogin.html"
+              onclick="history.back()"
+            >
+              <span class="material-symbols-outlined text-label-md"
+                >arrow_back</span
+              >
+              Halaman Utama User / TravelerKu
+            </a>
+            <div
+              class="inline-flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm"
+            >
+              <span
+                class="material-symbols-outlined text-body-sm text-primary"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >shield</span
+              >
+              <span>Enkripsi</span>
+            </div>
+          </div>
+        </div>
+        <!-- System notice -->
+        <div class="mt-space-md text-center max-w-sm">
+          <p class="font-label-sm text-label-sm text-on-surface-variant">
+            Aktivitas portal dipantau secara berkala &amp; Segala bentuk akses
+            tanpa otorisasi sah akan dicatat dan ditindaklanjuti.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
